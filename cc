@@ -2,7 +2,7 @@
 
 cd `dirname $0`
 
-var_name = "var-ruby-executer"
+var_name = "var-command-clipper-exec-command"
 
-ruby rb-executer.rb $var_name
+ruby command-clipper.rb $var_name
 eval "\$$var_name"
