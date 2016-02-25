@@ -1,6 +1,21 @@
-- a
-  - hoge
-  - foo
-- b
-  - huga
-  - bar
+root:
+  test_hash:
+    h1: 1
+    h2: 2
+    h3:
+      h3_1: 3
+      h3_2: 4
+  test_array:
+    - "a"
+    - "b"
+    -
+      - "c"
+      - "d"
+  test_boolean:
+    b1: true
+    b2: false
+    b3: on
+    b4: off
+    b5: yes
+    b6: no
+    
