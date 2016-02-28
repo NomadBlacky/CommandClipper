@@ -36,14 +36,35 @@ describe YAML do
     expect(hash["b6"]).to eq false
   end
 
-  it "整数"
+  it "整数" do
+    hash = root["test_integer"]
+    expect(hash["i1"]).to eq 1
+    expect(hash["i2"]).to eq 123456
+    expect(hash["i3"]).to eq 10
+    expect(hash["i4"]).to eq 255
+  end
 
-  it "浮動小数点"
+  it "浮動小数点" do
+    hash = root["test_float"]
+    expect(hash["f1"]).to eq 0.05
+  end
   
-  it "文字列"
+  it "文字列" do
+    hash = root["test_string"]
+    expect(hash["s1"]).to eq "hoge"
+    expect(hash["s2"]).to eq "foo"
+    expect(hash["s3"]).to eq "ほげほげ"
+  end
 
-  it "日付"
+  it "日付" do
+    hash = root["test_date"]
+    expect(hash["d1"]).to eq Date.new(2016, 2, 28)
+    expect(hash["d2"]).to eq "2016/02/28"
+  end
 
-  it "タイムスタンプ"
+  it "タイムスタンプ" do
+    hash = root["test_time_stamp"]
+    expect(hash["ts1"]).to eq Time.local(2016, 2, 28, 23, 0, 0)
+  end
   
 end
