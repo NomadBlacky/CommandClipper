@@ -3,19 +3,24 @@
 
 require 'yaml'
 
+module CommandClipper
+  class Client
 
-class CommandClipper
+    def initialize(tmp_file_path, commands_file_path=nil)
+      @tmp_file = File.new(tmp_file_path, "w+")
+      self.load(commands_file_path) if commands_file_path
+    end
 
-  def initialize(tmp_file_path)
-    @tmp_file = File.new(tmp_file_path, "w+")
+    def load(file_path)
+      @command_map = YAML.load_file(File.new(file_path))
+    end
+    
   end
-  
 end
 
-
 def main
-  cc = CommandClipper.new(ARGV[0])
-  cc.instance_eval { p @tmp_file }
+  cc = CommandClipper::Client.new(ARGV[0], ARGV[1])
+  cc.instance_eval { p @command_map }
 end
 
 main()

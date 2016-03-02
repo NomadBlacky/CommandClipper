@@ -4,5 +4,5 @@ cd `dirname $0`
 
 tmpfile=`mktemp`
 trap "rm -f $tmpfile" EXIT
-ruby ../lib/command-clipper.rb $tmpfile
-#sh $tmpfile
+ruby ../lib/command-clipper.rb $tmpfile ../config/commands.yaml
+sh $tmpfile
