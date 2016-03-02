@@ -2,7 +2,7 @@
 
 cd `dirname $0`
 
-var_name="command_clipper_exec_command"
-
-ruby ../lib/command-clipper.rb $var_name
-eval "sh ../.cmd.tmp"
+tmpfile=`mktemp`
+trap "rm -f $tmpfile" EXIT
+ruby ../lib/command-clipper.rb $tmpfile
+#sh $tmpfile

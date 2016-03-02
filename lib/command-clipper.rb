@@ -6,18 +6,16 @@ require 'yaml'
 
 class CommandClipper
 
-  attr_reader :commands_file
-
-  def initialize(commands_file)
-    @commands_file = commands_file
+  def initialize(tmp_file_path)
+    @tmp_file = File.new(tmp_file_path, "w+")
   end
   
 end
 
 
 def main
-  var_name = ARGV[0]
-  cc = CommandClipper.new(File.new(File.dirname(__FILE__) + "/../config/commands.yaml"))
+  cc = CommandClipper.new(ARGV[0])
+  cc.instance_eval { p @tmp_file }
 end
 
 main()
