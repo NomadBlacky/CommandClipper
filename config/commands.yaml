@@ -1,7 +1,0 @@
-commands:
-  - name: sample1
-    description: サンプル1
-    command: 'echo hoge'
-  - name: sample2
-    command: 'echo foo'
-    
