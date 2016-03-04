@@ -18,7 +18,12 @@ describe SQLite3::Database do
   end
 
   it "レコードの取得" do
-    @db.execute('select * from test') do |row|
+    result = @db.execute('select * from test where id = 1')
+    expect(result).to eq [[1, 1, 2.2, "three"]]
+  end
+
+  it "列名とレコードの取得" do
+    @db.execute2('select * from test where id = 1') do |row|
       p row
     end
   end
