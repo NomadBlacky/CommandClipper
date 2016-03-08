@@ -4,5 +4,5 @@ cd `dirname $0`
 
 tmpfile=`mktemp`
 trap "rm -f $tmpfile" EXIT
-ruby ../lib/client.rb $tmpfile ../config/commands.yaml
+ruby -I ../lib/ ./main.rb $tmpfile ../config/config.yaml
 sh $tmpfile
