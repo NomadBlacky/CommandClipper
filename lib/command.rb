@@ -7,14 +7,19 @@ module CommandClipper
 
   class Command
 
-    attr_reader :name, :description, :command
+    attr_reader   :id
+    attr_accessor :name, :description, :command
 
-    def initialize(name, description, command)
-      @name = name | ""
-      @description = description | ""
-      @command = command | ""
+    def initialize(id=nil)
+      yield self if block_given?
     end
 
+    def save(db_file)
+      
+    end
+
+    # class methods ------------------------------
+    
     def self.load_commands(db_file)
       
     end
