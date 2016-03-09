@@ -1,3 +1,4 @@
 # tempfile
 /.cmd.tmp
 /test/test.sqlite
+/config/config.yaml
