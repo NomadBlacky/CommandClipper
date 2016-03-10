@@ -6,9 +6,9 @@ require 'yaml'
 module CommandClipper
   class Client
 
-    def initialize(tmp_file_path, commands_file_path=nil)
+    def initialize(tmp_file_path, config)
       @tmp_file = File.new(tmp_file_path, "w+")
-      self.load(commands_file_path) if commands_file_path
+      @config = config
     end
 
     def load(file_path)

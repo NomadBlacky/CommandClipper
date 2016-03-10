@@ -3,8 +3,6 @@
 
 require 'command_clipper'
 
-def main
-  p CommandClipper::Config.instance
-end
-
-main()
+client = CommandClipper::Client.new(ARGV[0], CommandClipper::Config.instance)
+cli = CommandClipper::CLI.new(client)
+cli.start()

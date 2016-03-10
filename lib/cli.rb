@@ -9,7 +9,9 @@ module CommandClipper
       @client = client
     end
 
-    
+    def start
+      
+    end
     
   end
 
