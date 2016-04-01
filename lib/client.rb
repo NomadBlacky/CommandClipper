@@ -6,13 +6,12 @@ require 'yaml'
 module CommandClipper
   class Client
 
-    def initialize(tmp_file_path, config)
+    def initialize(tmp_file_path)
       @tmp_file = File.new(tmp_file_path, "w+")
-      @config = config
     end
 
-    def load(file_path)
-      @command_map = YAML.load_file(File.new(file_path))
+    def load_commands()
+      @commands = YAML.load_documents(File.new(Config.instance.save_file_path))
     end
     
   end
